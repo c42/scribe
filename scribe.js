@@ -2349,7 +2349,7 @@ define('plugins/core/events',[
           var isFirefoxBug = scribe.allowsBlockElements() &&
                   selection.range.startContainer === scribe.el;
 
-          if (isFirefoxBug) {
+          if (isFirefoxBug && scribe.el.firstChild) {
             var focusElement = getFirstDeepestChild(scribe.el.firstChild);
 
             var range = selection.range;
